@@ -12,7 +12,7 @@ A MelonLoader mod for **Cairn** that removes all food-based stat boosts while pr
 
 ## Installation
 
-1. Install [MelonLoader](https://melonwiki.xyz/) (v0.7.x recommended)
+1. Install [MelonLoader](https://melonwiki.xyz/) v0.7.2 (You can only find this version in the Nightly builds)
 2. Place `TrueFreeSolo.dll` in your `Cairn/Mods/` folder
 3. Launch the game
 
@@ -35,7 +35,7 @@ Since chalk also gives Stamina boosts, we can't simply block all "Stamina" boost
 ## Technical Details
 
 - **Game**: Cairn (Unity 6, IL2CPP)
-- **Mod Loader**: MelonLoader 0.7.x
+- **Mod Loader**: MelonLoader 0.7.2
 - **Data Path**: `GameDataManager.gameData.climberData.boosts`
 - **Structure**: `Dictionary<BoostType, List<BoostData>>`
 
