@@ -1,4 +1,4 @@
-# TrueFreeSolo
+# NoBuffsOnlyChalk
 
 A MelonLoader mod for **Cairn** that eliminates all stat buffs while preserving chalk effects. Experience the mountain as a true free solo climb.
 
@@ -18,7 +18,7 @@ Buff icons from food/drinks will still appear in the UI, but after consumption t
 ## Installation
 
 1. Install [MelonLoader](https://melonwiki.xyz/) v0.7.2 (Nightly builds only)
-2. Place `TrueFreeSolo.dll` in your `Cairn/Mods/` folder
+2. Place `NoBuffsOnlyChalk.dll` in your `Cairn/Mods/` folder
 3. Launch the game
 
 ## How It Works
@@ -52,7 +52,7 @@ This mod was inspired by a comment from **yked**:
 
 ## Bug Reports & Feedback
 
-Found a bug or something feels off? Please [open an issue](https://github.com/zhexirox/TrueFreeSolo-Cairn/issues) — any feedback helps improve the mod!
+Found a bug or something feels off? Please [open an issue](https://github.com/zhexirox/NoBuffsOnlyChalk-Cairn/issues) — any feedback helps improve the mod!
 
 ## Technical Details
 

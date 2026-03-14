@@ -2,13 +2,13 @@ using System;
 using MelonLoader;
 using UnityEngine;
 
-[assembly: MelonInfo(typeof(TrueFreeSolo.TrueFreeSoloMod), "TrueFreeSolo", "1.0.0", "Zhexirox")]
+[assembly: MelonInfo(typeof(NoBuffsOnlyChalk.NoBuffsOnlyChalkMod), "NoBuffsOnlyChalk", "1.0.0", "Zhexirox")]
 [assembly: MelonGame("TheGameBakers", "Cairn")]
 
-namespace TrueFreeSolo
+namespace NoBuffsOnlyChalk
 {
     /// <summary>
-    /// TrueFreeSolo - Experience Cairn as a true free solo climb.
+    /// NoBuffsOnlyChalk - Experience Cairn as a true free solo climb.
     /// 
     /// This mod removes all food-based stat boosts while preserving chalk effects.
     /// Install the mod and play - no configuration needed.
@@ -24,7 +24,7 @@ namespace TrueFreeSolo
     /// 
     /// Compatible with Cairn (Unity 6, IL2CPP) via MelonLoader.
     /// </summary>
-    public class TrueFreeSoloMod : MelonMod
+    public class NoBuffsOnlyChalkMod : MelonMod
     {
         // ================================================================
         // CONSTANTS
@@ -117,7 +117,7 @@ namespace TrueFreeSolo
         {
             _log = LoggerInstance;
             _log.Msg("========================================");
-            _log.Msg("   TrueFreeSolo v1.0");
+            _log.Msg("   NoBuffsOnlyChalk v1.0");
             _log.Msg("   Food boosts blocked, chalk allowed");
             _log.Msg("   Good Luck Climber!");
             _log.Msg("========================================");

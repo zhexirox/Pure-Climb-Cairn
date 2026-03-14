@@ -3,8 +3,8 @@
     <TargetFramework>netstandard2.1</TargetFramework>
     <LangVersion>latest</LangVersion>
     <Nullable>disable</Nullable>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <AssemblyName>TrueFreeSolo</AssemblyName>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <AssemblyName>NoBuffsOnlyChalk</AssemblyName>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
     <EnableDynamicLoading>true</EnableDynamicLoading>

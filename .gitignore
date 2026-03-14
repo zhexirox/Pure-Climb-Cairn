@@ -3,6 +3,6 @@
 
 # Except these files
 !.gitignore
-!TrueFreeSoloMod.cs
-!TrueFreeSolo.csproj
+!NoBuffsOnlyChalkMod.cs
+!NoBuffsOnlyChalk.csproj
 !README.md
