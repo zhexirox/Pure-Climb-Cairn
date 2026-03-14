@@ -1,9 +1,6 @@
 using System;
-//using System.Runtime.InteropServices;
 using MelonLoader;
 using UnityEngine;
-using Il2CppInterop.Runtime;
-//using Il2CppInterop.Runtime.InteropTypes.Fields;
 
 [assembly: MelonInfo(typeof(TrueFreeSolo.TrueFreeSoloMod), "TrueFreeSolo", "1.0.0", "Zhexirox")]
 [assembly: MelonGame("TheGameBakers", "Cairn")]
@@ -156,6 +153,12 @@ namespace TrueFreeSolo
         /// </summary>
         private bool EnsureReady()
         {
+            // Validate existing references aren't stale (destroyed IL2CPP objects)
+            if (_climberData != null && _climberData.Pointer == IntPtr.Zero)
+                _climberData = null;
+            if (_gameDataManager != null && _gameDataManager.Pointer == IntPtr.Zero)
+                _gameDataManager = null;
+            
             // Already have everything cached?
             if (_climberData != null && _reflectionCached) return true;
             
@@ -322,7 +325,7 @@ namespace TrueFreeSolo
         /// Zeroes shield fields and fires GameDataManager.OnShieldLost to update UI.
         /// Uses cached reflection - no GetField calls here.
         /// </summary>
-        private unsafe void ZeroShieldFields()
+        private void ZeroShieldFields()
         {
             try
             {
@@ -333,24 +336,12 @@ namespace TrueFreeSolo
                 // Nothing to do if shield is already empty
                 if (currentHp <= 0 && currentImpacts <= 0) return;
                 
-                // Write zeros via native IL2CPP API (fastest path)
-                IntPtr objPtr = _climberData.Pointer;
-                IntPtr classPtr = IL2CPP.il2cpp_object_get_class(objPtr);
-                IntPtr hpFieldPtr = IL2CPP.il2cpp_class_get_field_from_name(classPtr, "shieldHpRemaining");
-                IntPtr impactsFieldPtr = IL2CPP.il2cpp_class_get_field_from_name(classPtr, "shieldImpactsRemaining");
-                
-                if (hpFieldPtr != IntPtr.Zero && impactsFieldPtr != IntPtr.Zero)
-                {
-                    int zero = 0;
-                    IL2CPP.il2cpp_field_set_value(objPtr, hpFieldPtr, &zero);
-                    IL2CPP.il2cpp_field_set_value(objPtr, impactsFieldPtr, &zero);
-                }
+                // Write zeros via reflection (safe, no native pointers)
+                _shieldHpField.SetValue(_climberData, (Il2CppSystem.Object)0);
+                _shieldImpactsField.SetValue(_climberData, (Il2CppSystem.Object)0);
                 
                 // Fire OnShieldLost to update UI
                 FireOnShieldLost();
-                
-                // DEBUG
-                //_log.Msg($"Shield zeroed: HP {currentHp}→0, Impacts {currentImpacts}→0");
             }
             catch (Exception ex)
             {
