@@ -463,7 +463,8 @@ namespace TrueFreeSolo
                     _listRemoveAt.Invoke(boostList, 
                         new Il2CppSystem.Object[] { (Il2CppSystem.Object)i });
                     
-                    _log.Msg($"Blocked {BOOST_NAMES[boostType]} (remaining: {remaining:F1})");
+                    // DEBUG
+                    //_log.Msg($"Blocked {BOOST_NAMES[boostType]} (remaining: {remaining:F1})");
                     
                     // For Toughness: also fire OnBoostRemoved
                     if (isToughness)
