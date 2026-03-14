@@ -3,6 +3,7 @@
     <TargetFramework>netstandard2.1</TargetFramework>
     <LangVersion>latest</LangVersion>
     <Nullable>disable</Nullable>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <AssemblyName>TrueFreeSolo</AssemblyName>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
@@ -45,6 +46,12 @@
     </Reference>
     <Reference Include="Unity.InputSystem">
       <HintPath>$(CairnDir)\MelonLoader\Il2CppAssemblies\Unity.InputSystem.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    
+    <!-- Game assemblies (for direct ClimberData access) -->
+    <Reference Include="Il2CppTheGameBakers.Cairn.Global">
+      <HintPath>$(CairnDir)\MelonLoader\Il2CppAssemblies\Il2CppTheGameBakers.Cairn.Global.dll</HintPath>
       <Private>false</Private>
     </Reference>
   </ItemGroup>
