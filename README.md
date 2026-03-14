@@ -48,7 +48,7 @@ This mod was inspired by a comment from **yked**:
 
 ## Planned Improvements
 
-- Remove food/drink buff icons from the UI entirely (currently they flash briefly before disappearing)
+- Remove food/drink buff icons from the UI entirely
 
 ## Bug Reports & Feedback
 
