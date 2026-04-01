@@ -89,9 +89,9 @@ Found a bug or something feels off? Please [open an issue](https://github.com/zh
 ## Building from Source
 
 ```bash
-cd Cairn/ModSource/TrueFreeSolo
+cd Cairn/ModSource/NoBuffsOnlyChalk
 dotnet build -c Release
-copy bin\Release\TrueFreeSolo.dll ..\..\Mods\
+copy bin\Release\NoBuffsOnlyChalk.dll ..\..\Mods\
 ```
 
 ## License
